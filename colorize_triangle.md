@@ -5,7 +5,7 @@ draft: false
 
 # `colorizeTriangle()`
 
-Colorize the triangle defined by vertices `(vertex0=) (row0, col0)`, `(vertex1=)(row1, col1)`, and `(vertex2=)(row2, col2)`, using [barycentric coordinates](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/) to interpolate `color0`, `color1` and `color2`. Implemented as:
+Colorize the triangle defined by vertices `vertex0 (row0, col0)`, `vertex1 (row1, col1)`, and `vertex2 (row2, col2)`, using [barycentric coordinates](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/) to interpolate `color0`, `color1` and `color2`. Implemented as:
 
 ```js
 colorizeTriangle(row0, col0, row1, col1, row2, col2,
@@ -30,6 +30,7 @@ Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to
 
 # Example
 
+(press any or mouse click)  
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
 const ROWS = 20;
@@ -41,25 +42,38 @@ let row0, col0, row1, col1, row2, col2;
 function setup() {
   createCanvas(COLS * LENGTH, ROWS * LENGTH);
   quadrille = createQuadrille(20, 20);
-  randomize();
-  // highlevel call:
-  //quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
-  quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, 'red', 'green', 'blue');
-  //quadrille.colorize('red', 'green', 'blue', 'cyan');
+  update();
 }
 
 function draw() {
-  background('#060621');
+  background(0);
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
-  tri();
+  hint();
 }
 
-function tri() {
+function mouseClicked() {
+  update();
+}
+
+function keyPressed() {
+  update();
+}
+
+function update() {
+  randomize();
+  quadrille.clear();
+  quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
+  //quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, 'red', 'green', 'blue');
+}
+
+function hint() {
   push();
   stroke('cyan');
   strokeWeight(3);
   noFill();
-  triangle(col0 * LENGTH + LENGTH / 2, row0 * LENGTH + LENGTH / 2, col1 * LENGTH + LENGTH / 2, row1 * LENGTH + LENGTH / 2, col2 * LENGTH + LENGTH / 2, row2 * LENGTH + LENGTH / 2);
+  triangle(col0 * LENGTH + LENGTH / 2, row0 * LENGTH + LENGTH / 2,
+           col1 * LENGTH + LENGTH / 2, row1 * LENGTH + LENGTH / 2,
+           col2 * LENGTH + LENGTH / 2, row2 * LENGTH + LENGTH / 2);
   pop();
 }
 
@@ -75,7 +89,58 @@ function randomize() {
 
 {{< details title="code" open=false >}}
 ```js
+const ROWS = 20;
+const COLS = 20;
+const LENGTH = 20;
+let quadrille;
+let row0, col0, row1, col1, row2, col2;
 
+function setup() {
+  createCanvas(COLS * LENGTH, ROWS * LENGTH);
+  quadrille = createQuadrille(20, 20);
+  update();
+}
+
+function draw() {
+  background(0);
+  drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
+  hint();
+}
+
+function mouseClicked() {
+  update();
+}
+
+function keyPressed() {
+  update();
+}
+
+function update() {
+  randomize();
+  quadrille.clear();
+  quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2,
+                             [255, 0, 0], [0, 255, 0], [0, 0, 255]);
+}
+
+function hint() {
+  push();
+  stroke('cyan');
+  strokeWeight(3);
+  noFill();
+  triangle(col0 * LENGTH + LENGTH / 2, row0 * LENGTH + LENGTH / 2,
+           col1 * LENGTH + LENGTH / 2, row1 * LENGTH + LENGTH / 2,
+           col2 * LENGTH + LENGTH / 2, row2 * LENGTH + LENGTH / 2);
+  pop();
+}
+
+function randomize() {
+  col0 = int(random(0, COLS));
+  row0 = int(random(0, ROWS));
+  col1 = int(random(0, COLS));
+  row1 = int(random(0, ROWS));
+  col2 = int(random(0, COLS));
+  row2 = int(random(0, ROWS));
+}
 ```
 {{< /details >}}
 

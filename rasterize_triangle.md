@@ -9,6 +9,7 @@ Rasterize the triangle defined by vertices `(row0, col0)`, `(row1, col1)`, and `
 
 # Example
 
+(press any or mouse click)  
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
 const ROWS = 20;
@@ -20,20 +21,33 @@ let row0, col0, row1, col1, row2, col2;
 function setup() {
   createCanvas(COLS * LENGTH, ROWS * LENGTH);
   quadrille = createQuadrille(20, 20);
-  //randomize();
-  // highlevel call:
-  //quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
-  //quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, 'red', 'green', 'blue');
-  quadrille.colorize('red', 'green', 'blue', 'cyan');
+  update();
 }
 
 function draw() {
-  background('#060621');
+  background(0);
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
-  tri();
+  hint();
 }
 
-function tri() {
+function mouseClicked() {
+  update();
+}
+
+function keyPressed() {
+  update();
+}
+
+function update() {
+  randomize();
+  quadrille.clear();
+  quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2, colorizeShader, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
+  // low level call:
+  // [r, g, b, x, y]: rgb -> color components; x, y -> 2d normal
+  // quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2, colorizeShader, [255, 0, 0, 7, 4], [0, 255, 0, -1, -10], [0, 0, 255, 5, 8]);
+}
+
+function hint() {
   push();
   stroke('cyan');
   strokeWeight(3);
@@ -42,33 +56,20 @@ function tri() {
   pop();
 }
 
-function keyPressed() {
-  randomize();
-  quadrille.clear();
-  if (key === 'r') {
-    // low level call:
-    // [r, g, b, x, y]: rgb -> color components; x, y -> 2d normal
-    quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2, colorize_shader, [255, 0, 0, 7, 4], [0, 255, 0, -1, -10], [0, 0, 255, 5, 8]);
-  }
-  if (key === 's') {
-    quadrille.rasterize(colorize_shader, [255, 0, 0, 7, 4], [0, 255, 0, -1, -10], [0, 0, 255, 5, 8], [255, 255, 0, -1, -10]);
-  }
-  /*
-  if (key === 't') {
-    quadrille.clear(5, 5);
-    quadrille.fill(6, 6, color('cyan'));
-  }
-  */
+function colorizeShader({ pattern: rgb }) {
+  return color(rgb);
 }
 
+/*
 // pretty similar to what p5.Quadrille.colorizeTriangle does
-function colorize_shader({ pattern: mixin }) {
+function colorizeShader({ pattern: mixin }) {
   let rgb = mixin.slice(0, 3);
   // debug 2d normal
   console.log(mixin.slice(3));
   // use interpolated color as is
   return color(rgb);
 }
+// */
 
 function randomize() {
   col0 = int(random(0, COLS));
@@ -82,7 +83,63 @@ function randomize() {
 
 {{< details title="code" open=false >}}
 ```js
+const ROWS = 20;
+const COLS = 20;
+const LENGTH = 20;
+let quadrille;
+let row0, col0, row1, col1, row2, col2;
 
+function setup() {
+  createCanvas(COLS * LENGTH, ROWS * LENGTH);
+  quadrille = createQuadrille(20, 20);
+  update();
+}
+
+function draw() {
+  background(0);
+  drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
+  hint();
+}
+
+function mouseClicked() {
+  update();
+}
+
+function keyPressed() {
+  update();
+}
+
+function update() {
+  randomize();
+  quadrille.clear();
+  quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2,
+                              colorizeShader,
+                              [255, 0, 0], [0, 255, 0], [0, 0, 255]);
+}
+
+function hint() {
+  push();
+  stroke('cyan');
+  strokeWeight(3);
+  noFill();
+  triangle(col0 * LENGTH + LENGTH / 2, row0 * LENGTH + LENGTH / 2,
+           col1 * LENGTH + LENGTH / 2, row1 * LENGTH + LENGTH / 2,
+           col2 * LENGTH + LENGTH / 2, row2 * LENGTH + LENGTH / 2);
+  pop();
+}
+
+function colorizeShader({ pattern: rgb }) {
+  return color(rgb);
+}
+
+function randomize() {
+  col0 = int(random(0, COLS));
+  row0 = int(random(0, ROWS));
+  col1 = int(random(0, COLS));
+  row1 = int(random(0, ROWS));
+  col2 = int(random(0, COLS));
+  row2 = int(random(0, ROWS));
+}
 ```
 {{< /details >}}
 
