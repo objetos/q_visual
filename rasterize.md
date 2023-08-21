@@ -15,7 +15,6 @@ const ROWS = 20;
 const COLS = 20;
 const LENGTH = 20;
 let quadrille;
-let row0, col0, row1, col1, row2, col2;
 
 function setup() {
   createCanvas(COLS * LENGTH, ROWS * LENGTH);
@@ -37,7 +36,6 @@ function setup() {
 }
 
 function draw() {
-  background('#060621');
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
 }
 
@@ -65,7 +63,6 @@ const ROWS = 20;
 const COLS = 20;
 const LENGTH = 20;
 let quadrille;
-let row0, col0, row1, col1, row2, col2;
 
 function setup() {
   createCanvas(COLS * LENGTH, ROWS * LENGTH);
@@ -78,7 +75,6 @@ function setup() {
 }
 
 function draw() {
-  background('#060621');
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
 }
 
