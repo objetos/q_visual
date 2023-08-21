@@ -26,7 +26,58 @@ colorizeTriangle(row0, col0, row1, col1, row2, col2,
 }
 ```
  
- Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to interpolate other vertex data.
+Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to interpolate other vertex data.
+
+# Example
+
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
+`use strict`;
+const ROWS = 20;
+const COLS = 20;
+const LENGTH = 20;
+let quadrille;
+let row0, col0, row1, col1, row2, col2;
+
+function setup() {
+  createCanvas(COLS * LENGTH, ROWS * LENGTH);
+  quadrille = createQuadrille(20, 20);
+  randomize();
+  // highlevel call:
+  //quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
+  quadrille.colorizeTriangle(row0, col0, row1, col1, row2, col2, 'red', 'green', 'blue');
+  //quadrille.colorize('red', 'green', 'blue', 'cyan');
+}
+
+function draw() {
+  background('#060621');
+  drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
+  tri();
+}
+
+function tri() {
+  push();
+  stroke('cyan');
+  strokeWeight(3);
+  noFill();
+  triangle(col0 * LENGTH + LENGTH / 2, row0 * LENGTH + LENGTH / 2, col1 * LENGTH + LENGTH / 2, row1 * LENGTH + LENGTH / 2, col2 * LENGTH + LENGTH / 2, row2 * LENGTH + LENGTH / 2);
+  pop();
+}
+
+function randomize() {
+  col0 = int(random(0, COLS));
+  row0 = int(random(0, ROWS));
+  col1 = int(random(0, COLS));
+  row1 = int(random(0, ROWS));
+  col2 = int(random(0, COLS));
+  row2 = int(random(0, ROWS));
+}
+{{< /p5-global-iframe >}}
+
+{{< details title="code" open=false >}}
+```js
+
+```
+{{< /details >}}
 
 # Syntax
 
