@@ -9,7 +9,7 @@ Sort source cells according to their coloring.
 
 # Example
 
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" id="number" width="425" height="925" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="925" >}}
 `use strict`;
 Quadrille.BACKGROUND = 'black';
 let ascending;
