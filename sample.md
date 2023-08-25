@@ -32,27 +32,18 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 
 # Parameters
 
-<!--
-imageDisplay = this.IMAGE,
-colorDisplay = this.COLOR,
-stringDisplay = this.STRING,
-numberDisplay = this.NUMBER,
-arrayDisplay,
-objectDisplay,
-background = this.BACKGROUND,
-cellLength = this.CELL_LENGTH,
-outlineWeight = this.OUTLINE_WEIGHT,
-outline = this.OUTLINE,
-textColor = this.TEXT_COLOR,
-textZoom = this.TEXT_ZOOM}]
--->
-
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
-| mode        | String: Either `LUMA`, `AVG`, or `DISTANCE` default is `LUMA`.                                                  |
-| target      | [p5.Color](https://p5js.org/reference/#/p5.Color): `DISTANCE` mode target color, default is `Quadrille.OUTLINE` |
-| ascending   | Boolean: sort cells ascending default is true.                                                                  |
-| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is `Quadrille.TEXT_COLOR`        |
-| textZoom    | Number:: text zoom level default is `Quadrille.TEXT_ZOOM`                                                       |
+| cell        | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
+| imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.IMAGE]({{< ref "image" >}})        |
+| colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.COLOR]({{< ref "color" >}})        |
+| stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.STRING]({{< ref "string" >}})     |
+| numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.NUMBER]({{< ref "number" >}})     | 
+| arrayDisplay  | Function: array filled cell drawing custom procedure                                                          |
+| objectDisplay | Function: object filled cell drawing custom procedure                                                         |
 | background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.BACKGROUND`        |
 | cellLength  | Number: cell sampling length default is quadrille [width]({{< ref "width" >}})                                  |
+| outlineWeight | Number: edge weight default is [Quadrille.OUTLINE_WEIGHT]({{< ref "outline_weight" >}}). Use `0` to discard all edges |
+| outline       | [p5.Color](https://p5js.org/reference/#/p5.Color) representation: edge color default is [Quadrille.OUTLINE]({{< ref "outline" >}}) |
+| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is `Quadrille.TEXT_COLOR`        |
+| textZoom    | Number:: text zoom level default is `Quadrille.TEXT_ZOOM`                                                       |
