@@ -92,6 +92,6 @@ function draw() {
 | target      | [p5.Color](https://p5js.org/reference/#/p5.Color): `DISTANCE` mode target color, default is [Quadrille.OUTLINE]({{< ref "outline" >}}) |
 | ascending   | Boolean: sort cells ascending default is true.                                                                  |
 | textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is [Quadrille.TEXT_COLOR]({{< ref "text_color" >}}) |
-| textZoom    | Number:: text zoom level default is [source.TEXT_ZOOM]({{< ref "text_zoom" >}})                              |
+| textZoom    | Number: text zoom level default is [source.TEXT_ZOOM]({{< ref "text_zoom" >}})                               |
 | background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is [Quadrille.BACKGROUND]({{< ref "background" >}}) |
 | cellLength  | Number: cell sampling length default is source [width]({{< ref "width" >}})                                  |
