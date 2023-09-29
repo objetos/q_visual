@@ -14,7 +14,7 @@ colorizeTriangle(row0, col0, row1, col1, row2, col2,
           row0, col0, row1, col1, row2, col2,
           // software "fragment shader" colorizes the
           // (row0, col0), (row1, col1), (row2, col2) triangle
-          ({ pattern: xyza }) => color(xyza),
+          ({ array: xyza }) => color(xyza),
           // vertex attributes to be interpolated (each encoded as an array):
           // vertex0 color
           [red(color0), green(color0), blue(color0), alpha(color0)],

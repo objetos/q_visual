@@ -5,7 +5,7 @@ draft: false
 
 # `rasterize()`
 
-Rasterize quadrille according to upper-left corner vertex `pattern0`, bottom-left corner vertex `pattern1`, upper-right corner vertex `pattern2`, and bottom-right corner vertex `pattern3`,  using (fragment) `shader`. Call [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
+Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left corner vertex `array1`, upper-right corner vertex `array2`, and bottom-right corner vertex `array3`,  using (fragment) `shader`. Call [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
 
 # Example
 
@@ -40,14 +40,14 @@ function draw() {
 }
 
 // /*
-function colorizeShader({ pattern: rgb }) {
+function colorizeShader({ array: rgb }) {
   return color(rgb);
 }
 // */
 
 /*
 // pretty similar to what p5.Quadrille.colorizeTriangle does
-function colorizeShader({ pattern: mixin }) {
+function colorizeShader({ array: mixin }) {
   let rgb = mixin.slice(0, 3);
   // debug 2d normal
   console.log(mixin.slice(3));
@@ -78,7 +78,7 @@ function draw() {
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
 }
 
-function colorizeShader({ pattern: rgb }) {
+function colorizeShader({ array: rgb }) {
   return color(rgb);
 }
 ```
@@ -86,14 +86,14 @@ function colorizeShader({ pattern: rgb }) {
 
 # Syntax
 
-> `rasterize(shader, pattern0, [pattern1], [pattern2], [pattern3])`
+> `rasterize(shader, array0, [array1], [array2], [array3])`
 
 # Parameters
 
-| parameter | description                                                                                               |
-|-----------|-----------------------------------------------------------------------------------------------------------|
-| shader    | Function: taking `{ pattern: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
-| pattern0  | Array: corner0 attributes to be interpolated                                                              |
-| pattern1  | Array: corner1 attributes to be interpolated default is pattern0                                          |
-| pattern2  | Array: corner2 attributes to be interpolated default is pattern0                                          |
-| pattern3  | Array: corner3 attributes to be interpolated default is pattern0                                          |
+| parameter | description                                                                                             |
+|-----------|---------------------------------------------------------------------------------------------------------|
+| shader    | Function: taking `{ array: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
+| array0    | Array: corner0 attributes to be interpolated                                                            |
+| array1    | Array: corner1 attributes to be interpolated default is array0                                          |
+| array2    | Array: corner2 attributes to be interpolated default is array0                                          |
+| array3    | Array: corner3 attributes to be interpolated default is array0                                          |

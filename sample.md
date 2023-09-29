@@ -5,19 +5,17 @@ draft: false
 
 # `sample()`
 
-Sample cell as the `{r, g, b, a, total}` object literal. Used by the [sort]({{< ref "sort" >}}) algorithm. For instance `LUMA` sorting is [implemented](https://github.com/objetos/p5.quadrille.js/blob/main/p5.quadrille.js#L1018) as follows:
+Sample cell as the `{r, g, b, a, total}` object literal. Used by the [sort]({{< ref "sort" >}}) algorithm. For instance `LUMA` sorting is [implemented](https://github.com/objetos/p5.quadrille.js/blob/main/p5.quadrille.js#L1017) as follows:
 
 ``` js
 // excerpt from sort
 let memory1D = this.toArray();
 // ...
-memory1D.sort((cellA, cellB) => {
-  let sa = Quadrille.sample({ cell: cellA, background: background,
-                              cellLength: cellLength,
-                              textColor: textColor, textZoom: textZoom });
-  let sb = Quadrille.sample({ cell: cellB, background: background,
-                              cellLength: cellLength,
-                              textColor: textColor, textZoom: textZoom });
+memory1D.sort((valueA, valueB) => {
+  let sa = Quadrille.sample({ value: valueA, background,
+                              cellLength, textColor, textZoom });
+  let sb = Quadrille.sample({ value: valueB, background,
+                              cellLength, textColor, textZoom });
   let wa = 0.299 * sa.r + 0.587 * sa.g + 0.114 * sa.b;
   let wb = 0.299 * sb.r + 0.587 * sb.g + 0.114 * sb.b;
   return wa - wb;
@@ -28,13 +26,13 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 
 # Syntax
 
-> `sample([{cell, imageDisplay, colorDisplay, stringDisplay, numberDisplay, arrayDisplay, objectDisplay, background, cellLength, outlineWeight, outline, textColor, textZoom}])`
+> `sample([{value, imageDisplay, colorDisplay, stringDisplay, numberDisplay, arrayDisplay, objectDisplay, background, cellLength, outlineWeight, outline, textColor, textZoom}])`
 
 # Parameters
 
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
-| cell        | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
+| value       | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
 | imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.IMAGE]({{< ref "image" >}})        |
 | colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.COLOR]({{< ref "color" >}})        |
 | stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.STRING]({{< ref "string" >}})     |

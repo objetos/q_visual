@@ -41,30 +41,27 @@ function setup() {
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256]]);
   /*
-  numberDisplay = ({ graphics: graphics, cell: cell, outline: outline,
-                     outlineWeight: outlineWeight, cellLength: cellLength }) => {
+  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
     const numberColor = 'magenta';
     const min = 0.0625;
     const max = 0.25;
     graphics.colorMode(graphics.RGB, 255);
     graphics.fill(graphics.color(red(numberColor), green(numberColor), blue(numberColor),
-                  graphics.map(cell, min, max, 0, 255)));
+                  graphics.map(value, min, max, 0, 255)));
     graphics.rect(0, 0, cellLength, cellLength);
     Quadrille.TILE({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
                      cellLength: cellLength });
   }
   */
-  numberDisplay = ({ graphics: graphics, cell: cell, outline: outline,
-                  outlineWeight: outlineWeight, cellLength: cellLength }) => {
+  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
     const numberColor = 'magenta';
     const min = 0.0625;
     const max = 0.25;
     colorMode(RGB, 255);
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(cell, min, max, 0, 255)));
+               map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics: graphics, outline: outline,
-                     outlineWeight: outlineWeight, cellLength: cellLength });
+    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -124,17 +121,15 @@ function setup() {
     [6 / 256, 24 / 256, 36 / 256, 24 / 256, 6 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256]]);
-  numberDisplay = ({ graphics: graphics, cell: cell, outline: outline,
-                  outlineWeight: outlineWeight, cellLength: cellLength }) => {
+  numberDisplay = ({graphics, value, outline, outlineWeight, cellLength}) => {
     const numberColor = 'magenta';
     const min = 0.0625;
     const max = 0.25;
     colorMode(RGB, 255);
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(cell, min, max, 0, 255)));
+               map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics: graphics, outline: outline,
-                     outlineWeight: outlineWeight, cellLength: cellLength });
+    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -187,17 +182,15 @@ function setup() {
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],
     [0.0625, 0.125, 0.0625]]);
-  numberDisplay = ({ graphics: graphics, cell: cell, outline: outline,
-                  outlineWeight: outlineWeight, cellLength: cellLength }) => {
+  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
     const numberColor = 'magenta';
     const min = 0.0625;
     const max = 0.25;
     colorMode(RGB, 255);
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(cell, min, max, 0, 255)));
+               map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics: graphics, outline: outline,
-                     outlineWeight: outlineWeight, cellLength: cellLength });
+    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image);
 }
@@ -247,17 +240,15 @@ function setup() {
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],
     [0.0625, 0.125, 0.0625]]);
-  numberDisplay = ({ graphics: graphics, cell: cell, outline: outline,
-                  outlineWeight: outlineWeight, cellLength: cellLength }) => {
+  numberDisplay = ({graphics, value, outline, outlineWeight, cellLength}) => {
     const numberColor = 'magenta';
     const min = 0.0625;
     const max = 0.25;
     colorMode(RGB, 255);
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(cell, min, max, 0, 255)));
+               map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics: graphics, outline: outline,
-                     outlineWeight: outlineWeight, cellLength: cellLength });
+    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image);
 }

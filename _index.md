@@ -10,9 +10,9 @@ Visual computing methods to perform [image processing](https://en.wikipedia.org/
 
 {{< hint info >}}
 **Observation**\
-The methods found in this section may be [chained](https://en.wikipedia.org/wiki/Method_chaining), e.g., `quadrille.filter(mask).rasterize(shader, pattern)` which is equivalent to:
+The methods found in this section may be [chained](https://en.wikipedia.org/wiki/Method_chaining), e.g., `quadrille.filter(mask).rasterize(shader, array)` which is equivalent to:
 ```js
 quadrille.filter(mask);
-quadrille.rasterize(shader, pattern);
+quadrille.rasterize(shader, array);
 ```
 {{< /hint >}}
