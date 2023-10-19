@@ -10,7 +10,7 @@ Rasterize the triangle defined by vertices `(row0, col0)`, `(row1, col1)`, and `
 # Example
 
 (press any or mouse click)  
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
+{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
 const ROWS = 20;
 const COLS = 20;

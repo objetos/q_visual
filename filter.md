@@ -7,12 +7,17 @@ draft: false
 
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
 
+{{< hint info >}}
+**Observation**\
+Only pixelated quadrille images may be filtered, i.e., those created either with `createQuadrille(width, image, true)` or `createQuadrille(width, image, false)`.
+{{< /hint >}}
+
 # Examples
 
 ## filter(mask)
 
 (press **f** to toggle filtered image; **m** to toggle mask display; and, **s** to rescale image)  
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille, source, target;
@@ -22,7 +27,7 @@ let displayMask;
 
 function update() {
   const displaySource = quadrille === source || quadrille === undefined;
-  source = createQuadrille(2 ** scl, image);
+  source = createQuadrille(2 ** scl, image, false);
   target = source.clone();
   target.filter(mask);
   quadrille = displaySource ? source : target;
@@ -103,7 +108,7 @@ let displayMask;
 
 function update() {
   const displaySource = quadrille === source || quadrille === undefined;
-  source = createQuadrille(2 ** scl, image);
+  source = createQuadrille(2 ** scl, image, false);
   target = source.clone();
   target.filter(mask);
   quadrille = displaySource ? source : target;
@@ -165,7 +170,7 @@ function keyPressed() {
 ## filter(mask, row, col)
 
 (mouse move to apply filter locally; press **r** to reset filtered image & **s** to rescale it)  
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille;
@@ -192,7 +197,7 @@ function setup() {
     rect(0, 0, cellLength, cellLength);
     Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
-  quadrille = createQuadrille(2 ** scl, image);
+  quadrille = createQuadrille(2 ** scl, image, false);
 }
 
 function draw() {
@@ -250,7 +255,7 @@ function setup() {
     rect(0, 0, cellLength, cellLength);
     Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
   }
-  quadrille = createQuadrille(2 ** scl, image);
+  quadrille = createQuadrille(2 ** scl, image, false);
 }
 
 function draw() {
