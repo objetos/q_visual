@@ -26,7 +26,7 @@ let numberDisplay;
 let displayMask;
 
 function update() {
-  const displaySource = quadrille === source || quadrille === undefined;
+  const displaySource = !quadrille || quadrille === source;
   source = createQuadrille(2 ** scl, image, false);
   target = source.clone();
   target.filter(mask);
@@ -107,7 +107,7 @@ let numberDisplay;
 let displayMask;
 
 function update() {
-  const displaySource = quadrille === source || quadrille === undefined;
+  const displaySource = !quadrille || quadrille === source;
   source = createQuadrille(2 ** scl, image, false);
   target = source.clone();
   target.filter(mask);
