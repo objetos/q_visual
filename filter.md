@@ -17,7 +17,7 @@ Only pixelated quadrille images may be filtered, i.e., those created either with
 ## filter(mask)
 
 (press **f** to toggle filtered image; **m** to toggle mask display; and, **s** to rescale image)  
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille, source, target;
@@ -54,7 +54,7 @@ function setup() {
     graphics.fill(graphics.color(red(numberColor), green(numberColor), blue(numberColor),
                   graphics.map(value, min, max, 0, 255)));
     graphics.rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
+    Quadrille.tile({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
                      cellLength: cellLength });
   }
   */
@@ -66,7 +66,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -134,7 +134,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -170,7 +170,7 @@ function keyPressed() {
 ## filter(mask, row, col)
 
 (mouse move to apply filter locally; press **r** to reset filtered image & **s** to rescale it)  
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille;
@@ -195,7 +195,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image, false);
 }
@@ -253,7 +253,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.TILE({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image, false);
 }

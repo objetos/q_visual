@@ -33,10 +33,10 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
 | value       | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
-| imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.IMAGE]({{< ref "image" >}})        |
-| colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.COLOR]({{< ref "color" >}})        |
-| stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.STRING]({{< ref "string" >}})     |
-| numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.NUMBER]({{< ref "number" >}})     | 
+| imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.image]({{< ref "image" >}})        |
+| colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.color]({{< ref "color" >}})        |
+| stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.string]({{< ref "string" >}})     |
+| numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.number]({{< ref "number" >}})     | 
 | arrayDisplay  | Function: array filled cell drawing custom procedure                                                          |
 | objectDisplay | Function: object filled cell drawing custom procedure                                                         |
 | background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.BACKGROUND`        |
