@@ -39,9 +39,9 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 | numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.numberDisplay]({{< ref "number_display" >}})     | 
 | arrayDisplay  | Function: array filled cell drawing custom procedure                                                          |
 | objectDisplay | Function: object filled cell drawing custom procedure                                                         |
-| background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.BACKGROUND`        |
+| background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.background`        |
 | cellLength  | Number: cell sampling length default is quadrille [width]({{< ref "width" >}})                                  |
-| outlineWeight | Number: edge weight default is [Quadrille.OUTLINE_WEIGHT]({{< ref "outline_weight" >}}). Use `0` to discard all edges |
-| outline       | [p5.Color](https://p5js.org/reference/#/p5.Color) representation: edge color default is [Quadrille.OUTLINE]({{< ref "outline" >}}) |
-| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is `Quadrille.TEXT_COLOR`        |
-| textZoom    | Number:: text zoom level default is `Quadrille.TEXT_ZOOM`                                                       |
+| outlineWeight | Number: edge weight default is [Quadrille.outlineWeight]({{< ref "outline_weight" >}}). Use `0` to discard all edges |
+| outline       | [p5.Color](https://p5js.org/reference/#/p5.Color) representation: edge color default is [Quadrille.outline]({{< ref "outline" >}}) |
+| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is `Quadrille.textColor`        |
+| textZoom    | Number:: text zoom level default is `Quadrille.textZoom`                                                       |
