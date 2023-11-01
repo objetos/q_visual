@@ -54,7 +54,7 @@ function setup() {
     graphics.fill(graphics.color(red(numberColor), green(numberColor), blue(numberColor),
                   graphics.map(value, min, max, 0, 255)));
     graphics.rect(0, 0, cellLength, cellLength);
-    Quadrille.tile({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
+    Quadrille.tileDisplay({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
                      cellLength: cellLength });
   }
   */
@@ -66,7 +66,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -134,7 +134,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
   update();
 }
@@ -195,7 +195,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image, false);
 }
@@ -253,7 +253,7 @@ function setup() {
     fill(color(red(numberColor), green(numberColor), blue(numberColor),
                map(value, min, max, 0, 255)));
     rect(0, 0, cellLength, cellLength);
-    Quadrille.tile({ graphics, outline, outlineWeight, cellLength });
+    Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
   quadrille = createQuadrille(2 ** scl, image, false);
 }
