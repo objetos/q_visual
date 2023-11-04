@@ -4,9 +4,9 @@ weight: 8
 draft: false
 ---
 
-# Visual computing methods
+# Visual algorithms
 
-Visual computing methods to perform [image processing](https://en.wikipedia.org/wiki/Digital_image_processing), sorting of the quadrille cells and emulate [shaders](https://en.wikipedia.org/wiki/Shader) in software employ the quadrille cells as a [raster graphics](https://en.wikipedia.org/wiki/Raster_graphics).
+The visual algorithms suite comprises functions that manipulate and visually represent data within quadrille cells. Algorithms like [filter]({{< relref "filter" >}}) for image convolutions, [rasterize]({{< relref "rasterize" >}}) for software-based barycentric interpolations, and [sort]({{< relref "sort" >}}) for arranging cells based on visual criteria, enable the creation of dynamic visualizations. These methods collectively transform the quadrille into an interactive canvas for illustrating and navigating visual computing concepts, offering an intuitive way to understand and apply various algorithms from rasterization and image processing to data sorting.
 
 {{< hint info >}}
 **Observation**\
