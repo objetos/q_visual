@@ -17,7 +17,7 @@ Only pixelated quadrille images may be filtered, i.e., those created either with
 ## filter(mask)
 
 (press **f** to toggle filtered image; **m** to toggle mask display; and, **s** to rescale image)  
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille, source, target;
@@ -170,7 +170,7 @@ function keyPressed() {
 ## filter(mask, row, col)
 
 (mouse move to apply filter locally; press **r** to reset filtered image & **s** to rescale it)  
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
 `use strict`;
 let scl = 4;
 let mask, quadrille;
