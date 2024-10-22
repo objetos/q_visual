@@ -1,9 +1,8 @@
 ---
 weight: 2
 draft: false
+title: sort()
 ---
-
-# `sort()`
 
 Sort source cells according to their coloring.
 

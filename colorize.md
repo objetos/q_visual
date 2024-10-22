@@ -1,9 +1,8 @@
 ---
 weight: 5
 draft: false
+title: colorize()
 ---
-
-# `colorize()`
 
 Colorize quadrille according to upper-left corner `color0`, bottom-left corner `color1`, upper-right corner `color2`, and bottom-right corner `color3` colors. Call [colorizeTriangle()]({{< ref "colorize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
 

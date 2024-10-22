@@ -1,9 +1,8 @@
 ---
 weight: 1
 draft: false
+title: filter()
 ---
-
-# `filter()`
 
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
 

@@ -1,9 +1,8 @@
 ---
 weight: 4
 draft: false
+title: rasterize()
 ---
-
-# `rasterize()`
 
 Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left corner vertex `array1`, upper-right corner vertex `array2`, and bottom-right corner vertex `array3`,  using (fragment) `shader`. Call [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
 

@@ -1,9 +1,8 @@
 ---
 weight: 3
 draft: false
+title: sample()
 ---
-
-# `sample()`
 
 Sample cell as the `{r, g, b, a, total}` object literal. Used by the [sort]({{< ref "sort" >}}) algorithm. For instance `LUMA` sorting is [implemented](https://github.com/objetos/p5.quadrille.js/blob/main/p5.quadrille.js#L1017) as follows:
 
