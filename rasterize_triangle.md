@@ -6,7 +6,7 @@ title: rasterizeTriangle()
 
 Rasterize the triangle defined by vertices `(row0, col0)`, `(row1, col1)`, and `(row2, col2)`, using [barycentric coordinates](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/). The user provided [software rendered](https://en.wikipedia.org/wiki/Software_rendering) [(fragment) shader](https://en.wikipedia.org/wiki/Shader) is a function parameterized with the object literal `{ array: interpolated_data_array, row: i, col: j }` and that should return a [p5.Color](https://p5js.org/reference/#/p5.Color). Refer to the [colorizeTriangle()]({{< ref "colorize_triangle" >}}) method for an example.
 
-# Example
+## Example
 
 (press any or mouse click)  
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
@@ -142,11 +142,11 @@ function randomize() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `rasterizeTriangle(row0, col0, row1, col1, row2, col2, shader, array0, [array1], [array2])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|

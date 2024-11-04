@@ -27,7 +27,7 @@ colorizeTriangle(row0, col0, row1, col1, row2, col2,
  
 Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to interpolate other vertex data.
 
-# Example
+## Example
 
 (press any or mouse click)  
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
@@ -143,11 +143,11 @@ function randomize() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `colorizeTriangle(row0, col0, row1, col1, row2, col2, color0, [color1], [color2])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                            |
 |-----------|--------------------------------------------------------------------------------------------------------|

@@ -286,11 +286,11 @@ function keyPressed() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `filter(mask, [row], [col])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                                                      |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------|

@@ -6,7 +6,7 @@ title: colorize()
 
 Colorize quadrille according to upper-left corner `color0`, bottom-left corner `color1`, upper-right corner `color2`, and bottom-right corner `color3` colors. Call [colorizeTriangle()]({{< ref "colorize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
@@ -45,11 +45,11 @@ function draw() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `colorize(color0, [color1], [color2], [color3])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                            |
 |-----------|--------------------------------------------------------------------------------------------------------|

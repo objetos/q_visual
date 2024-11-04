@@ -6,7 +6,7 @@ title: sort()
 
 Sort source cells according to their coloring.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="925" >}}
 `use strict`;
@@ -79,11 +79,11 @@ function draw() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `sort([{[mode], [target], [ascending], [textColor], [textZoom], [background], [cellLength]}])`
 
-# Parameters
+## Parameters
 
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|

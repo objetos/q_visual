@@ -6,7 +6,7 @@ title: rasterize()
 
 Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left corner vertex `array1`, upper-right corner vertex `array2`, and bottom-right corner vertex `array3`,  using (fragment) `shader`. Call [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
@@ -83,11 +83,11 @@ function colorizeShader({ array: rgb }) {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `rasterize(shader, array0, [array1], [array2], [array3])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|

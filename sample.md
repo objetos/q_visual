@@ -23,11 +23,11 @@ memory1D.sort((valueA, valueB) => {
 
 Use this method to implementing other sorting criteria of the `quadrille` cells.
 
-# Syntax
+## Syntax
 
 > `sample([{value, imageDisplay, colorDisplay, stringDisplay, numberDisplay, arrayDisplay, objectDisplay, background, cellLength, outlineWeight, outline, textColor, textZoom}])`
 
-# Parameters
+## Parameters
 
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
