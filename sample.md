@@ -42,5 +42,5 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 | cellLength  | Number: cell sampling length default is quadrille [width]({{< ref "width" >}})                                  |
 | outlineWeight | Number: edge weight default is [Quadrille.outlineWeight]({{< ref "outline_weight" >}}). Use `0` to discard all edges |
 | outline       | [p5.Color](https://p5js.org/reference/#/p5.Color) representation: edge color default is [Quadrille.outline]({{< ref "outline" >}}) |
-| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is `Quadrille.textColor`        |
-| textZoom    | Number:: text zoom level default is `Quadrille.textZoom`                                                       |
+| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is [Quadrille.textColor]({{< ref "text_color" >}}) |
+| textZoom    | Number:: text zoom level default is [Quadrille.textZoom]({{< ref "text_zoom" >}})                         |
