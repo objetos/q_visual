@@ -31,7 +31,7 @@ Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to
 
 (press any or mouse click)  
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+'use strict';
 const ROWS = 20;
 const COLS = 20;
 const LENGTH = 20;

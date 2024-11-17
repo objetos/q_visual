@@ -9,7 +9,7 @@ Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left 
 ## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+'use strict';
 const ROWS = 20;
 const COLS = 20;
 const LENGTH = 20;

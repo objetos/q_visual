@@ -9,7 +9,7 @@ Sort source cells according to their coloring.
 ## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="925" >}}
-`use strict`;
+'use strict';
 Quadrille.background = 'black';
 let ascending;
 let source, target;
