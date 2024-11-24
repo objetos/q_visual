@@ -32,10 +32,10 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 | parameter   | description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
 | value       | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
-| imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.imageDisplay]({{< ref "image_display" >}})        |
-| colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.colorDisplay]({{< ref "color_display" >}})        |
-| stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.stringDisplay]({{< ref "string_display" >}})     |
-| numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.numberDisplay]({{< ref "number_display" >}})     | 
+| imageDisplay  | Function: image filled cell drawing custom procedure default is [Quadrille.imageDisplay]({{< ref "display_fns" >}})        |
+| colorDisplay  | Function: color filled cell drawing custom procedure default is [Quadrille.colorDisplay]({{< ref "display_fns" >}})        |
+| stringDisplay | Function: string filled cell drawing custom procedure default is [Quadrille.stringDisplay]({{< ref "display_fns" >}})     |
+| numberDisplay | Function: number filled cell drawing custom procedure default is [Quadrille.numberDisplay]({{< ref "display_fns" >}})     | 
 | arrayDisplay  | Function: array filled cell drawing custom procedure                                                          |
 | objectDisplay | Function: object filled cell drawing custom procedure                                                         |
 | background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.background`, which is set to `white` |
