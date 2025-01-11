@@ -31,7 +31,7 @@ Use this method to implementing other sorting criteria of the `quadrille` cells.
 
 | Param       | Description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
-| `value`     | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
+| `value`     | Any valid JavaScript value |
 | `imageDisplay` | Function: image filled cell drawing custom procedure default is [Quadrille.imageDisplay]({{< ref "display_fns" >}})        |
 | `colorDisplay` | Function: color filled cell drawing custom procedure default is [Quadrille.colorDisplay]({{< ref "display_fns" >}})        |
 | `stringDisplay` | Function: string filled cell drawing custom procedure default is [Quadrille.stringDisplay]({{< ref "display_fns" >}})     |

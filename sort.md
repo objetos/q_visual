@@ -87,7 +87,7 @@ function draw() {
 
 | Param       | Description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
-| `mode`      | String: Either `LUMA`, `AVG`, or `DISTANCE` default is `LUMA`.                                                  |
+| `mode`      | String: Either `LUMA`, `AVG`, or `DISTANCE` default is `LUMA`                                                   |
 | `target`    | [p5.Color](https://p5js.org/reference/#/p5.Color): `DISTANCE` mode target color, default is [Quadrille.outline]({{< ref "outline" >}}) |
 | `ascending` | Boolean: sort cells ascending default is true.                                                                  |
 | `textColor` | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is [Quadrille.textColor]({{< ref "text_color" >}}) |

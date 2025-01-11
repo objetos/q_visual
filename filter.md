@@ -1,7 +1,7 @@
 ---
 weight: 1
 draft: false
-title: filter()
+title: filter(args)
 ---
 
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
@@ -11,9 +11,9 @@ Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processin
 Only pixelated quadrille images may be filtered, i.e., those created either with `createQuadrille(width, image, true)` or `createQuadrille(width, image, false)`.
 {{< /callout >}}
 
-# Examples
+## Examples
 
-## filter(mask)
+### filter(mask)
 
 (press **f** to toggle filtered image; **m** to toggle mask display; and, **s** to rescale image)  
 {{< p5-global-iframe quadrille="true" width="537" height="537" >}}
@@ -166,7 +166,7 @@ function keyPressed() {
 ```
 {{< /details >}}
 
-## filter(mask, row, col)
+### filter(mask, row, col)
 
 (mouse move to apply filter locally; press **r** to reset filtered image & **s** to rescale it)  
 {{< p5-global-iframe quadrille="true" width="537" height="537" >}}
