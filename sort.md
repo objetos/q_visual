@@ -1,7 +1,7 @@
 ---
 weight: 2
 draft: false
-title: sort()
+title: sort({options})
 ---
 
 Sort source cells according to their coloring.
@@ -85,12 +85,12 @@ function draw() {
 
 ## Parameters
 
-| parameter   | description                                                                                                     |
+| Param       | Description                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------|
-| mode        | String: Either `LUMA`, `AVG`, or `DISTANCE` default is `LUMA`.                                                  |
-| target      | [p5.Color](https://p5js.org/reference/#/p5.Color): `DISTANCE` mode target color, default is [Quadrille.outline]({{< ref "outline" >}}) |
-| ascending   | Boolean: sort cells ascending default is true.                                                                  |
-| textColor   | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is [Quadrille.textColor]({{< ref "text_color" >}}) |
-| textZoom    | Number: text zoom level default is [source.textZoom]({{< ref "text_zoom" >}})                               |
-| background  | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.background`, which is set to `white` |
-| cellLength  | Number: cell sampling length default is source [width]({{< ref "width" >}})                                  |
+| `mode`      | String: Either `LUMA`, `AVG`, or `DISTANCE` default is `LUMA`.                                                  |
+| `target`    | [p5.Color](https://p5js.org/reference/#/p5.Color): `DISTANCE` mode target color, default is [Quadrille.outline]({{< ref "outline" >}}) |
+| `ascending` | Boolean: sort cells ascending default is true.                                                                  |
+| `textColor` | [p5.Color](https://p5js.org/reference/#/p5.Color): text sampling color default is [Quadrille.textColor]({{< ref "text_color" >}}) |
+| `textZoom`  | Number: text zoom level default is [source.textZoom]({{< ref "text_zoom" >}})                               |
+| `background` | [p5.Color](https://p5js.org/reference/#/p5.Color): background sampling default is `Quadrille.background`, which is set to `white` |
+| `cellLength` | Number: cell sampling length default is source [width]({{< ref "width" >}})                                  |

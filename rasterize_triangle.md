@@ -1,7 +1,7 @@
 ---
 weight: 6
 draft: false
-title: rasterizeTriangle()
+title: rasterizeTriangle(args)
 ---
 
 Rasterize the triangle defined by vertices `(row0, col0)`, `(row1, col1)`, and `(row2, col2)`, using [barycentric coordinates](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/). The user provided [software rendered](https://en.wikipedia.org/wiki/Software_rendering) [(fragment) shader](https://en.wikipedia.org/wiki/Shader) is a function parameterized with the object literal `{ array: interpolated_data_array, row: i, col: j }` and that should return a [p5.Color](https://p5js.org/reference/#/p5.Color). Refer to the [colorizeTriangle()]({{< ref "colorize_triangle" >}}) method for an example.
@@ -148,15 +148,15 @@ function randomize() {
 
 ## Parameters
 
-| parameter | description                                                                                             |
+| Param     | Description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|
-| row0      | Number: vertex0 row coordinate                                                                          |
-| col0      | Number: vertex0 col coordinate                                                                          |
-| row1      | Number: vertex1 row coordinate                                                                          |
-| col1      | Number: vertex1 col coordinate                                                                          |
-| row2      | Number: vertex2 row coordinate                                                                          |
-| col2      | Number: vertex2 col coordinate                                                                          |
-| shader    | Function: taking `{ array: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
-| array0    | Array: vertex0 attributes to be interpolated                                                            |
-| array1    | Array: vertex1 attributes to be interpolated default is array0                                          |
-| array2    | Array: vertex2 attributes to be interpolated default is array0                                          |
+| `row0`    | Number: vertex0 row coordinate                                                                          |
+| `col0`    | Number: vertex0 col coordinate                                                                          |
+| `row1`    | Number: vertex1 row coordinate                                                                          |
+| `col1`    | Number: vertex1 col coordinate                                                                          |
+| `row2`    | Number: vertex2 row coordinate                                                                          |
+| `col2`    | Number: vertex2 col coordinate                                                                          |
+| `shader`  | Function: taking `{ array: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
+| `array0`  | Array: vertex0 attributes to be interpolated                                                            |
+| `array1`  | Array: vertex1 attributes to be interpolated default is `array0`                                        |
+| `array2`  | Array: vertex2 attributes to be interpolated default is `array0`                                        |

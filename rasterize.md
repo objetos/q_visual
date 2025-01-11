@@ -1,7 +1,7 @@
 ---
 weight: 4
 draft: false
-title: rasterize()
+title: rasterize(args)
 ---
 
 Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left corner vertex `array1`, upper-right corner vertex `array2`, and bottom-right corner vertex `array3`,  using (fragment) `shader`. Call [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) on the two non-overlapping triangles entirely covering the quadrille.
@@ -89,10 +89,10 @@ function colorizeShader({ array: rgb }) {
 
 ## Parameters
 
-| parameter | description                                                                                             |
+| Param     | Description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|
-| shader    | Function: taking `{ array: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
-| array0    | Array: corner0 attributes to be interpolated                                                            |
-| array1    | Array: corner1 attributes to be interpolated default is array0                                          |
-| array2    | Array: corner2 attributes to be interpolated default is array0                                          |
-| array3    | Array: corner3 attributes to be interpolated default is array0                                          |
+| `shader`  | Function: taking `{ array: interpolated_data_array, row: i, col: j }` params and returning a `p5.Color` |
+| `array0`  | Array: corner0 attributes to be interpolated                                                            |
+| `array1`  | Array: corner1 attributes to be interpolated default is `array0`                                        |
+| `array2`  | Array: corner2 attributes to be interpolated default is `array0`                                        |
+| `array3`  | Array: corner3 attributes to be interpolated default is `array0`                                        |

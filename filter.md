@@ -292,8 +292,8 @@ function keyPressed() {
 
 ## Parameters
 
-| parameter | description                                                                                                                      |
+| Param     | Description                                                                                                                      |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------|
-| mask      | Quadrille: quadrille of numbers representing the [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) |
-| row       | Number: cell row coordinate, if `undefined` applies filter to the whole     quadrille                                            |
-| col       | Number: cell col coordinate, if `undefined` applies filter to the whole     quadrille                                            |
+| `mask`    | Quadrille: quadrille of numbers representing the [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) |
+| `row`     | Number: cell row coordinate, if `undefined` applies filter to the whole     quadrille                                            |
+| `col`     | Number: cell col coordinate, if `undefined` applies filter to the whole     quadrille                                            |
