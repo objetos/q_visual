@@ -7,7 +7,6 @@ title: filter(args)
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
 
 {{< callout type="info" >}}
-**Observation**\
 Only pixelated quadrille images may be filtered, i.e., those created either with `createQuadrille(width, image, true)` or `createQuadrille(width, image, false)`.
 {{< /callout >}}
 
