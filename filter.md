@@ -96,7 +96,7 @@ function keyPressed() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 let scl = 4;
 let mask, quadrille, source, target;
@@ -163,7 +163,7 @@ function keyPressed() {
   }
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ### filter(mask, row, col)
 
@@ -226,7 +226,7 @@ function keyPressed() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 let scl = 4;
 let mask, quadrille;
@@ -283,7 +283,7 @@ function keyPressed() {
   }
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 

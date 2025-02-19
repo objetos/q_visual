@@ -86,7 +86,7 @@ function randomize() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 const ROWS = 20;
 const COLS = 20;
@@ -141,7 +141,7 @@ function randomize() {
   row2 = int(random(0, ROWS));
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 

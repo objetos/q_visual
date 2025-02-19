@@ -26,7 +26,7 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 const ROWS = 20;
 const COLS = 20;
@@ -43,7 +43,7 @@ function draw() {
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 

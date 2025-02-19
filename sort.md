@@ -43,7 +43,7 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 Quadrille.background = 'black';
 let ascending;
@@ -77,7 +77,7 @@ function draw() {
   drawQuadrille(target, { row: 5 });
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 
