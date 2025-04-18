@@ -15,18 +15,17 @@ let ascending;
 let source, target;
 let array;
 
-function preload() {
+async function setup() {
+  createCanvas(400, 900);
+  
   array = [];
   for (let i = 1; i <= 13; i++) {
-    array.push(loadImage(`../p${i}.jpg`));
+    array.push(await loadImage(`../p${i}.jpg`));
   }
   array.push(210);
   array.push('🐒');
   array.push(80);
-}
-
-function setup() {
-  createCanvas(400, 900);
+  
   source = createQuadrille(4, array);
   target = source.clone();
   target.sort();
@@ -50,18 +49,17 @@ let ascending;
 let source, target;
 let array;
 
-function preload() {
+async function setup() {
+  createCanvas(400, 900);
+  
   array = [];
   for (let i = 1; i <= 13; i++) {
-    array.push(loadImage(`p${i}.jpg`));
+    array.push(await loadImage(`p${i}.jpg`));
   }
   array.push(210);
   array.push('🐒');
   array.push(80);
-}
-
-function setup() {
-  createCanvas(400, 900);
+  
   source = createQuadrille(4, array);
   target = source.clone();
   target.sort();
