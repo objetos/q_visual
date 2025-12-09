@@ -33,7 +33,7 @@ function update() {
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('../mandrill.png');
+  image = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
@@ -171,7 +171,7 @@ let numberDisplay;
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('../mandrill.png');
+  image = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],

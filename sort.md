@@ -19,7 +19,7 @@ async function setup() {
   createCanvas(400, 900);
   array = [];
   for (let i = 1; i <= 13; i++) {
-    array.push(await loadImage(`../p${i}.jpg`));
+    array.push(await loadImage(`/paintings/p${i}.jpg`));
   }
   array.push(210);
   array.push('🐒');
