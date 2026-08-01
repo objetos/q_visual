@@ -6,9 +6,13 @@ title: sort({options})
 
 Sort source cells according to their coloring.
 
+{{< callout type="warning" >}}
+`sort` (like [sample]({{< ref "sample" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
+{{< /callout >}}
+
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="425" height="925" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.background = 'black';
 let ascending;
@@ -38,7 +42,7 @@ function draw() {
   drawQuadrille(source);
   drawQuadrille(target, { row: 5 });
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -51,7 +55,7 @@ async function setup() {
   createCanvas(400, 900);
   array = [];
   for (let i = 1; i <= 13; i++) {
-    array.push(await loadImage(`p${i}.jpg`));
+    array.push(await loadImage(`/paintings/p${i}.jpg`));
   }
   array.push(210);
   array.push('🐒');
@@ -70,7 +74,7 @@ function draw() {
   drawQuadrille(source);
   drawQuadrille(target, { row: 5 });
 }
-````
+```
 
 {{% /details %}}
 

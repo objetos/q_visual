@@ -7,7 +7,7 @@ title: filter(args)
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
 
 {{< callout type="info" >}}
-Only pixelated quadrille images may be filtered, i.e., those created either with `createQuadrille(width, image, true)` or `createQuadrille(width, image, false)`.
+Filtering requires **color-valued cells**, i.e., image-pixelated quadrilles as created by [createQuadrille(width, image)]({{< relref "create_quadrille_width_image" >}}) or [createQuadrille(width, image, coherence)]({{< relref "create_quadrille_width_image_coherence" >}}).
 {{< /callout >}}
 
 ## Examples
@@ -15,7 +15,7 @@ Only pixelated quadrille images may be filtered, i.e., those created either with
 ### filter(mask)
 
 (press **f** to toggle filtered image; **m** to toggle mask display; and, **s** to rescale image)  
-{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 let scl = 4;
 let mask, quadrille, source, target;
@@ -91,7 +91,7 @@ function keyPressed() {
     update();
   }
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -111,7 +111,7 @@ function update() {
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('mandrill.png');
+  image = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
@@ -162,7 +162,7 @@ function keyPressed() {
 ### filter(mask, row, col)
 
 (mouse move to apply filter locally; press **r** to reset filtered image & **s** to rescale it)  
-{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 let scl = 4;
 let mask, quadrille;
@@ -215,7 +215,7 @@ function keyPressed() {
     quadrille = createQuadrille(2 ** scl, image);
   }
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -226,7 +226,7 @@ let numberDisplay;
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('mandrill.png');
+  image = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],

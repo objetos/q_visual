@@ -8,7 +8,7 @@ Rasterize quadrille according to upper-left corner vertex `array0`, bottom-left 
 
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 const ROWS = 20;
 const COLS = 20;
@@ -54,7 +54,7 @@ function colorizeShader({ array: mixin }) {
   return color(rgb);
 }
 // */
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

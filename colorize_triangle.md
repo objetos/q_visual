@@ -30,7 +30,7 @@ Refer to [rasterizeTriangle()]({{< ref "rasterize_triangle" >}}) when in need to
 ## Example
 
 (press any or mouse click)  
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 const ROWS = 20;
 const COLS = 20;
@@ -84,7 +84,7 @@ function randomize() {
   col2 = int(random(0, COLS));
   row2 = int(random(0, ROWS));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

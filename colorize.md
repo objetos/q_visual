@@ -8,7 +8,7 @@ Colorize quadrille according to upper-left corner `color0`, bottom-left corner `
 
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 const ROWS = 20;
 const COLS = 20;
@@ -24,7 +24,7 @@ function setup() {
 function draw() {
   drawQuadrille(quadrille, { cellLength: LENGTH, outline: 'green' });
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -56,4 +56,4 @@ function draw() {
 | `color0`  | [p5.Color](https://p5js.org/reference/#/p5.Color) : corner0 color to be interpolated                   |
 | `color1`  | [p5.Color](https://p5js.org/reference/#/p5.Color) : corner1 color to be interpolated default is `color0` |
 | `color2`  | [p5.Color](https://p5js.org/reference/#/p5.Color) : corner2 color to be interpolated default is `color0` |
-| `color3`  | [p5.Color](https://p5js.org/reference/#/p5.Color) : corner2 color to be interpolated default is `color0` |
+| `color3`  | [p5.Color](https://p5js.org/reference/#/p5.Color) : corner3 color to be interpolated default is `color0` |

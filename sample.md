@@ -4,7 +4,7 @@ draft: false
 title: sample({options})
 ---
 
-Sample cell as the `{r, g, b, a, total}` object literal. Used by the [sort]({{< ref "sort" >}}) algorithm. For instance `LUMA` sorting is [implemented](https://github.com/objetos/p5.quadrille.js/blob/main/p5.quadrille.js#L1017) as follows:
+Sample cell as the `{r, g, b, a, total}` object literal. Used by the [sort]({{< ref "sort" >}}) algorithm. For instance `LUMA` sorting is [implemented](https://github.com/objetos/p5.quadrille.js/blob/main/src/quadrille.js) as follows:
 
 ``` js
 // excerpt from sort
@@ -21,7 +21,11 @@ memory1D.sort((valueA, valueB) => {
 });
 ```
 
-Use this method to implementing other sorting criteria of the `quadrille` cells.
+Use this method to implement other sorting criteria of the `quadrille` cells.
+
+{{< callout type="warning" >}}
+`sample` (like [sort]({{< ref "sort" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
+{{< /callout >}}
 
 ## Syntax
 
