@@ -19,13 +19,13 @@ Filtering requires **color-valued cells**, i.e., image-pixelated quadrilles as c
 'use strict';
 let scl = 4;
 let mask, quadrille, source, target;
-let image;
-let numberDisplay;
+let mandrill;
+let ramp;
 let displayMask;
 
 function update() {
   const displaySource = !quadrille || quadrille === source;
-  source = createQuadrille(2 ** scl, image, false);
+  source = createQuadrille(2 ** scl, mandrill, false);
   target = source.clone();
   target.filter(mask);
   quadrille = displaySource ? source : target;
@@ -33,33 +33,20 @@ function update() {
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('/images/mandrill.png');
+  mandrill = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [6 / 256, 24 / 256, 36 / 256, 24 / 256, 6 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256]]);
-  /*
-  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
-    const numberColor = 'magenta';
-    const min = 0.0625;
-    const max = 0.25;
-    graphics.colorMode(graphics.RGB, 255);
-    graphics.fill(graphics.color(red(numberColor), green(numberColor), blue(numberColor),
-                  graphics.map(value, min, max, 0, 255)));
-    graphics.rect(0, 0, cellLength, cellLength);
-    Quadrille.tileDisplay({ graphics: graphics, outline: outline, outlineWeight: outlineWeight,
-                     cellLength: cellLength });
-  }
-  */
-  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
-    const numberColor = 'magenta';
-    const min = 0.0625;
-    const max = 0.25;
+  ramp = ({ graphics, value, outline, outlineWeight, cellLength }) => {
+    const weightColor = 'magenta';
+    const lo = 0.0625;
+    const hi = 0.25;
     colorMode(RGB, 255);
-    fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(value, min, max, 0, 255)));
+    fill(color(red(weightColor), green(weightColor), blue(weightColor),
+               map(value, lo, hi, 0, 255)));
     rect(0, 0, cellLength, cellLength);
     Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
@@ -70,7 +57,7 @@ function draw() {
   background('#060621');
   if (displayMask) {
     drawQuadrille(mask, { cellLength: width / mask.width, outline: 'magenta',
-                          numberDisplay: numberDisplay });
+                          numberDisplay: ramp });
   } else {
     drawQuadrille(quadrille,
                   { cellLength: 512 / (2 ** scl),
@@ -97,13 +84,13 @@ function keyPressed() {
 ```js
 let scl = 4;
 let mask, quadrille, source, target;
-let image;
-let numberDisplay;
+let mandrill;
+let ramp;
 let displayMask;
 
 function update() {
   const displaySource = !quadrille || quadrille === source;
-  source = createQuadrille(2 ** scl, image, false);
+  source = createQuadrille(2 ** scl, mandrill, false);
   target = source.clone();
   target.filter(mask);
   quadrille = displaySource ? source : target;
@@ -111,20 +98,20 @@ function update() {
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('/images/mandrill.png');
+  mandrill = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [6 / 256, 24 / 256, 36 / 256, 24 / 256, 6 / 256],
     [4 / 256, 16 / 256, 24 / 256, 16 / 256, 4 / 256],
     [1 / 256, 4 / 256, 6 / 256, 4 / 256, 1 / 256]]);
-  numberDisplay = ({graphics, value, outline, outlineWeight, cellLength}) => {
-    const numberColor = 'magenta';
-    const min = 0.0625;
-    const max = 0.25;
+  ramp = ({ graphics, value, outline, outlineWeight, cellLength }) => {
+    const weightColor = 'magenta';
+    const lo = 0.0625;
+    const hi = 0.25;
     colorMode(RGB, 255);
-    fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(value, min, max, 0, 255)));
+    fill(color(red(weightColor), green(weightColor), blue(weightColor),
+               map(value, lo, hi, 0, 255)));
     rect(0, 0, cellLength, cellLength);
     Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
@@ -135,7 +122,7 @@ function draw() {
   background('#060621');
   if (displayMask) {
     drawQuadrille(mask, { cellLength: width / mask.width, outline: 'magenta',
-                          numberDisplay: numberDisplay });
+                          numberDisplay: ramp });
   } else {
     drawQuadrille(quadrille,
                   { cellLength: 512 / (2 ** scl),
@@ -166,39 +153,39 @@ function keyPressed() {
 'use strict';
 let scl = 4;
 let mask, quadrille;
-let image;
-let numberDisplay;
+let mandrill;
+let ramp;
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('/images/mandrill.png');
+  mandrill = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],
     [0.0625, 0.125, 0.0625]]);
-  numberDisplay = ({ graphics, value, outline, outlineWeight, cellLength }) => {
-    const numberColor = 'magenta';
-    const min = 0.0625;
-    const max = 0.25;
+  ramp = ({ graphics, value, outline, outlineWeight, cellLength }) => {
+    const weightColor = 'magenta';
+    const lo = 0.0625;
+    const hi = 0.25;
     colorMode(RGB, 255);
-    fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(value, min, max, 0, 255)));
+    fill(color(red(weightColor), green(weightColor), blue(weightColor),
+               map(value, lo, hi, 0, 255)));
     rect(0, 0, cellLength, cellLength);
     Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
-  quadrille = createQuadrille(2 ** scl, image, false);
+  quadrille = createQuadrille(2 ** scl, mandrill, false);
 }
 
 function draw() {
   background('#060621');
   drawQuadrille(quadrille, { cellLength: 512 / (2 ** scl),
                              outlineWeight: 16 / (2 ** scl) });
-  const half_size = (mask.width - 1) / 2;
-  drawQuadrille(mask, { col: quadrille.mouseCol - half_size,
-                        row: quadrille.mouseRow - half_size,
+  const halfSize = (mask.width - 1) / 2;
+  drawQuadrille(mask, { col: quadrille.mouseCol - halfSize,
+                        row: quadrille.mouseRow - halfSize,
                         cellLength: 512 / (2 ** scl),
                         outline: 'green',
-                        numberDisplay: numberDisplay });
+                        numberDisplay: ramp });
 }
 
 function mouseMoved() {
@@ -208,11 +195,11 @@ function mouseMoved() {
 
 function keyPressed() {
   if (key === 'r') {
-    quadrille = createQuadrille(2 ** scl, image);
+    quadrille = createQuadrille(2 ** scl, mandrill);
   }
   if (key === 's') {
     scl = scl < 7 ? scl + 1 : 4;
-    quadrille = createQuadrille(2 ** scl, image);
+    quadrille = createQuadrille(2 ** scl, mandrill);
   }
 }
 {{< /p5 >}}
@@ -221,39 +208,39 @@ function keyPressed() {
 ```js
 let scl = 4;
 let mask, quadrille;
-let image;
-let numberDisplay;
+let mandrill;
+let ramp;
 
 async function setup() {
   createCanvas(512, 512);
-  image = await loadImage('/images/mandrill.png');
+  mandrill = await loadImage('/images/mandrill.png');
   mask = createQuadrille([
     [0.0625, 0.125, 0.0625],
     [0.125, 0.25, 0.125],
     [0.0625, 0.125, 0.0625]]);
-  numberDisplay = ({graphics, value, outline, outlineWeight, cellLength}) => {
-    const numberColor = 'magenta';
-    const min = 0.0625;
-    const max = 0.25;
+  ramp = ({ graphics, value, outline, outlineWeight, cellLength }) => {
+    const weightColor = 'magenta';
+    const lo = 0.0625;
+    const hi = 0.25;
     colorMode(RGB, 255);
-    fill(color(red(numberColor), green(numberColor), blue(numberColor),
-               map(value, min, max, 0, 255)));
+    fill(color(red(weightColor), green(weightColor), blue(weightColor),
+               map(value, lo, hi, 0, 255)));
     rect(0, 0, cellLength, cellLength);
     Quadrille.tileDisplay({ graphics, outline, outlineWeight, cellLength });
   }
-  quadrille = createQuadrille(2 ** scl, image, false);
+  quadrille = createQuadrille(2 ** scl, mandrill, false);
 }
 
 function draw() {
   background('#060621');
   drawQuadrille(quadrille, { cellLength: 512 / (2 ** scl),
                              outlineWeight: 16 / (2 ** scl) });
-  const half_size = (mask.width - 1) / 2;
-  drawQuadrille(mask, { col: quadrille.mouseCol - half_size,
-                        row: quadrille.mouseRow - half_size,
+  const halfSize = (mask.width - 1) / 2;
+  drawQuadrille(mask, { col: quadrille.mouseCol - halfSize,
+                        row: quadrille.mouseRow - halfSize,
                         cellLength: 512 / (2 ** scl),
                         outline: 'green',
-                        numberDisplay: numberDisplay });
+                        numberDisplay: ramp });
 }
 
 function mouseMoved() {
@@ -263,11 +250,11 @@ function mouseMoved() {
 
 function keyPressed() {
   if (key === 'r') {
-    quadrille = createQuadrille(2 ** scl, image);
+    quadrille = createQuadrille(2 ** scl, mandrill);
   }
   if (key === 's') {
     scl = scl < 7 ? scl + 1 : 4;
-    quadrille = createQuadrille(2 ** scl, image);
+    quadrille = createQuadrille(2 ** scl, mandrill);
   }
 }
 ```

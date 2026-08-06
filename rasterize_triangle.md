@@ -38,7 +38,7 @@ function keyPressed() {
 }
 
 function update() {
-  randomize();
+  pickCorners();
   quadrille.clear();
   quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2, colorizeShader, [255, 0, 0], [0, 255, 0], [0, 0, 255]);
   // low level call:
@@ -70,7 +70,7 @@ function colorizeShader({ array: mixin }) {
 }
 // */
 
-function randomize() {
+function pickCorners() {
   col0 = int(random(0, COLS));
   row0 = int(random(0, ROWS));
   col1 = int(random(0, COLS));
@@ -109,7 +109,7 @@ function keyPressed() {
 }
 
 function update() {
-  randomize();
+  pickCorners();
   quadrille.clear();
   quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2,
                               colorizeShader,
@@ -131,7 +131,7 @@ function colorizeShader({ array: rgb }) {
   return color(rgb);
 }
 
-function randomize() {
+function pickCorners() {
   col0 = int(random(0, COLS));
   row0 = int(random(0, ROWS));
   col1 = int(random(0, COLS));
