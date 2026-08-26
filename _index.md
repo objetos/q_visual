@@ -7,18 +7,17 @@ title: Visual Algorithms
 
 The **visual algorithms** suite comprises methods that manipulate and visually represent data within `quadrille` cells. Functions such as [filter]({{< relref "filter" >}}) for image convolutions, [rasterize]({{< relref "rasterize" >}}) for software-based barycentric interpolations, and [sort]({{< relref "sort" >}}) for arranging cells based on visual criteria enable the creation of dynamic and interactive visualizations. These methods collectively transform the quadrille into an interactive canvas for illustrating and navigating visual computing concepts, offering an intuitive way to explore algorithms for rasterization, image processing, and data sorting.
 
-{{< callout type="info" >}}  
-The methods in this section support [method chaining](https://en.wikipedia.org/wiki/Method_chaining). For example:
-```javascript
-quadrille.filter(mask).rasterize(shader, array);
-```
-is equivalent to:
-```javascript
-quadrille.filter(mask);
-quadrille.rasterize(shader, array);
-```
-This approach enhances readability and streamlines the application of multiple operations.
-{{< /callout >}}
+> [!NOTE]
+> The methods in this section support [method chaining](https://en.wikipedia.org/wiki/Method_chaining). For example:
+> ```javascript
+> quadrille.filter(mask).rasterize(shader, array);
+> ```
+> is equivalent to:
+> ```javascript
+> quadrille.filter(mask);
+> quadrille.rasterize(shader, array);
+> ```
+> This approach enhances readability and streamlines the application of multiple operations.
 
 ## Method Overview
 

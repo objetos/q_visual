@@ -23,9 +23,8 @@ memory1D.sort((valueA, valueB) => {
 
 Use this method to implement other sorting criteria of the `quadrille` cells.
 
-{{< callout type="warning" >}}
-`sample` (like [sort]({{< ref "sort" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
-{{< /callout >}}
+> [!WARNING]
+> `sample` (like [sort]({{< ref "sort" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
 
 ## Syntax
 

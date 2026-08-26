@@ -6,9 +6,8 @@ title: sort({options})
 
 Sort source cells according to their coloring.
 
-{{< callout type="warning" >}}
-`sort` (like [sample]({{< ref "sample" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
-{{< /callout >}}
+> [!WARNING]
+> `sort` (like [sample]({{< ref "sample" >}})) works in the default **P2D** renderer only — not in `WEBGL`.
 
 ## Example
 

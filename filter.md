@@ -6,9 +6,8 @@ title: filter(args)
 
 Apply [convolution mask](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29) filter either to the whole quadrille or at specific `(row, col)` cell.
 
-{{< callout type="info" >}}
-Filtering requires **color-valued cells**, i.e., image-pixelated quadrilles as created by [createQuadrille(width, image)]({{< relref "create_quadrille_width_image" >}}) or [createQuadrille(width, image, coherence)]({{< relref "create_quadrille_width_image_coherence" >}}).
-{{< /callout >}}
+> [!NOTE]
+> Filtering requires **color-valued cells**, i.e., image-pixelated quadrilles as created by [createQuadrille(width, image)]({{< relref "create_quadrille_width_image" >}}) or [createQuadrille(width, image, coherence)]({{< relref "create_quadrille_width_image_coherence" >}}).
 
 ## Examples
 
